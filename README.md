@@ -1,3 +1,5 @@
+A React Lession for T2 class only.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
