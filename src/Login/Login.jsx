@@ -1,9 +1,29 @@
 import React from "react";
 
-class Login extends React.Component {
+class Login extends React.PureComponent {
   static defaultProps = {
     sex: "Girl"
   };
+  constructor(props) {
+    super(props);
+    this.foo = "bar";
+  }
+  componentDidMount() {
+    console.log("did mount");
+  }
+  componentDidUpdate() {
+    console.log("did updateeeeee");
+  }
+  componentWillUnmount() {
+    console.log("Login Bye");
+  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (nextState.email === "abc") {
+  //     return false;
+  //   }
+  //   console.log(nextProps, this.props, nextState, this.state);
+  //   return true;
+  // }
   state = {
     email: "",
     password: ""
