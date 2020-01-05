@@ -1,40 +1,27 @@
-import React from "react";
+import React from 'react'
+import { Tabs } from 'antd'
 
-import Login from "../Login";
-import logo from "./images/logo.svg";
-import "./styles/App.css";
+import LoginPage from '../LoginPage'
+import Register from '../Register'
+
+import './styles/App.css'
+import 'antd/dist/antd.css'
 
 class App extends React.Component {
-  state = {
-    isShown: false
-  };
-  toHideAndShow = () => {
-    const { isShown } = this.state;
-    this.setState({
-      isShown: !isShown
-    });
-  };
   render() {
-    const { isShown } = this.state;
-    const username = "Mirror";
     return (
       <div className="App">
-        <header className="App-header">
-          <button onClick={this.toHideAndShow}>
-            {isShown ? "Hide" : "Show"}
-          </button>
-          <img src={logo} className="App-logo" alt="logo" />
-          {isShown && (
-            <Login
-              message="Hello Please Login!"
-              username={username}
-              sex="boy"
-            />
-          )}
-        </header>
+        <Tabs defaultActiveKey="register">
+          <Tabs.TabPane tab="Login" key="login">
+            <LoginPage />
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Register" key="register">
+            <Register />
+          </Tabs.TabPane>
+        </Tabs>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

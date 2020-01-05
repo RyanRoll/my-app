@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react'
 
 class Login extends React.PureComponent {
   static defaultProps = {
-    sex: "Girl"
-  };
+    sex: 'Girl',
+  }
   constructor(props) {
-    super(props);
-    this.foo = "bar";
+    super(props)
+    this.foo = 'bar'
   }
   componentDidMount() {
-    console.log("did mount");
+    console.log('did mount')
   }
   componentDidUpdate() {
-    console.log("did updateeeeee");
+    console.log('did updateeeeee')
   }
   componentWillUnmount() {
-    console.log("Login Bye");
+    console.log('Login Bye')
   }
   // shouldComponentUpdate(nextProps, nextState) {
   //   if (nextState.email === "abc") {
@@ -25,28 +25,28 @@ class Login extends React.PureComponent {
   //   return true;
   // }
   state = {
-    email: "",
-    password: ""
-  };
+    email: '',
+    password: '',
+  }
   onEmailChange = event => {
-    const { value } = event.target;
+    const { value } = event.target
     this.setState({
-      email: value
-    });
-  };
+      email: value,
+    })
+  }
   onPasswordChange = event => {
-    const { value } = event.target;
+    const { value } = event.target
     this.setState({
-      password: value
-    });
-  };
+      password: value,
+    })
+  }
   onSubmit = () => {
-    const { email, password } = this.state;
-    console.log(email, password);
-  };
+    const { email, password } = this.state
+    console.log(email, password)
+  }
   render() {
-    const { message, username, sex } = this.props;
-    const { email, password } = this.state;
+    const { message, username, sex } = this.props
+    const { email, password } = this.state
     return (
       <div>
         <h2>{message}</h2>
@@ -65,8 +65,8 @@ class Login extends React.PureComponent {
         <br />
         <button onClick={this.onSubmit}>Submit</button>
       </div>
-    );
+    )
   }
 }
 
-export default Login;
+export default Login
